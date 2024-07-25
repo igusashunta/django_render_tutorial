@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-f#w6(%mv_2-wb_rrrphw58%1o&t2kek)s&s@=djj*sgsj!ydkj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-render-yiqe.onrender.com"]
+ALLOWED_HOSTS = ["django_render_tutorial_takuto","localhost"]
 
 
 # Application definition
