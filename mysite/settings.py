@@ -15,7 +15,7 @@ import os
 import environ # type: ignore
 from decouple import config # type: ignore
 from dj_database_url import parse as dburl # type: ignore
-
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,10 +82,12 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-default_dburl= "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+# デフォルトのデータベースURL（ローカル開発用にSQLiteを設定）
+default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+dburl = dj_database_url.parse
 
 DATABASES = {
-    "default": config("DATABASE_URL", default= default_dburl, cast=dburl) # type: ignore
+    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
 }
 
 
