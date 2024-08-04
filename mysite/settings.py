@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-f#w6(%mv_2-wb_rrrphw58%1o&t2kek)s&s@=djj*sgsj!ydkj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django_render_rag","127.0.0.1"]
+ALLOWED_HOSTS = ["django-render-rag-com2.onrender.com","127.0.0.1"]
 
 
 # Application definition
@@ -134,6 +134,17 @@ STATICFIELS_STORAGE="whitenoise.storage.COmpressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+#追加　参照：https://qiita.com/wooooo/items/1e0cef5837fb4eff47ab
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
+    },
+}
+
+
+
 
 SUPERUSER_NAME=env("SUPERUSER_NAME")
 SUPERUSER_EMAIL=env("SUPERUSER_EMAIL")
