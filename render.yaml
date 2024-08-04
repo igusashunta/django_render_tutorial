@@ -1,13 +1,13 @@
 databases:
-  - name: django_render_rag_db
+  - name: django_render_ragsystem_db
     region: singapore
     plan: free
-    databaseName: django_render_rag_db
+    databaseName: django_render_ragsystem_db
     user: django_user
 
 services:
   - type: web
-    name: django_render_rag
+    name: django_render_ragsystem
     env: python
     region: singapore
     buildCommand: './build.sh'
@@ -18,7 +18,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: django_render_rag_db
+          name: django_render_ragsystem_db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
